@@ -9,14 +9,23 @@
   </head>
   <body>
     <h1>Filmes Populares</h1>
-    <form action="">
-      <input
-        type="text"
-        name="query"
-        id="query"
-        placeholder="Digite algum filme para pesquisar..."
-        alt="Campo de busca para nome de filmes"
-      />
+    <form class="flex flex-col" action="">
+      <div>
+        <input
+          class="rounded"
+          type="text"
+          name="query"
+          id="query"
+          placeholder="Digite algum filme para pesquisar..."
+          alt="Campo de busca para nome de filmes"
+        />
+        <button type="submit">
+          <img
+            src="./static/mglass.svg"
+            alt="Ícone de lupa, representando busca"
+          />
+        </button>
+      </div>
       <label for="favorites">
         <input
           type="checkbox"
@@ -27,24 +36,28 @@
         Mostrar meus filmes favoritos apenas
       </label>
     </form>
-    <div class="list flex flex-vertical">
-      <div class="card shadow rounded">
+    <div class="list flex flex-col">
+      <div class="card shadow rounded grid">
         <div class="left">
-          <img src="./static/placeholder.svg" alt="Imagem do poster do filme" />
+          <img
+            class="full-rounded"
+            src="./static/placeholder.svg"
+            alt="Imagem do poster do filme"
+          />
         </div>
         <div class="info">
           <h2>Avengers Endgame (2019)</h2>
           <span
             ><img
               id="rating"
-              src=""
+              src="./static/star.svg"
               alt="Estrela representando o rating do filme"
             />9.2</span
           >
           <span
             ><img
               id="heart"
-              src=""
+              src="./static/heart-off.svg"
               alt="Coração representando se o filme está nos favoritos"
             />Favoritar</span
           >
