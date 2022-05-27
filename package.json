@@ -1,0 +1,16 @@
+{
+  "name": "desafio7daysofcode-javascript",
+  "version": "1.0.0",
+  "description": "Projeto de um catálogo de filmes criado durante o desafio #7DaysOfCodeJavascript da Alura",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Javascript",
+    "HTML",
+    "CSS"
+  ],
+  "author": "Eduardo Aquino",
+  "license": "ISC"
+}
