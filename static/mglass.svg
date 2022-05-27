@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="18"
+   height="18"
+   viewBox="0 0 18 18"
+   fill="none"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="mglass.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="15.792051"
+     inkscape:cx="-7.5354364"
+     inkscape:cy="-1.6147364"
+     inkscape:window-width="1920"
+     inkscape:window-height="991"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <path
+     d="m 8.1134781,14.854054 c 3.8276529,0 6.9305449,-3.102892 6.9305449,-6.9305449 0,-3.827636 -3.102892,-6.93054499 -6.9305449,-6.93054499 -3.827636,0 -6.930545,3.10290899 -6.930545,6.93054499 0,3.8276529 3.102909,6.9305449 6.930545,6.9305449 z"
+     stroke="#8a8a8a"
+     stroke-width="2"
+     stroke-linecap="round"
+     stroke-linejoin="round"
+     id="path10" />
+  <path
+     style="fill:#959595;fill-opacity:1;stroke:#8a8a8a;stroke-width:1.79251;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
+     d="m 12.926105,12.948493 4.181373,4.226149"
+     id="path1542"
+     sodipodi:nodetypes="cc" />
+</svg>
