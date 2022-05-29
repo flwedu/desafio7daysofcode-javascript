@@ -4,7 +4,7 @@
   "description": "Projeto de um catálogo de filmes criado durante o desafio #7DaysOfCodeJavascript da Alura",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "start": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -13,5 +13,8 @@
     "CSS"
   ],
   "author": "Eduardo Aquino",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "lite-server": "^2.6.1"
+  }
 }
