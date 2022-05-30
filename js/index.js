@@ -7,6 +7,7 @@ const renderMovieInList = renderMovie.bind(this, listEl);
 
 const service = apiService(config.API_KEY);
 service.getPopularMovies().then((results) => {
+  listEl.innerHTML = "";
   results.forEach(renderMovieInList);
 });
 
@@ -15,6 +16,7 @@ const form = document.getElementById("form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   service.searchMovie(form["query"].value).then((results) => {
+    listEl.innerHTML = "";
     results.forEach(renderMovieInList);
   });
 });
