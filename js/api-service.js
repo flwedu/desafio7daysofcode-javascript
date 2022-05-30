@@ -5,12 +5,12 @@ import parseToMovie from "./util/parse-to-movie.js";
  */
 const apiService = (apiKey) => {
   const api = `?api_key=${apiKey}`;
-  const url = "https://api.themoviedb.org/3/movie";
+  const url = "https://api.themoviedb.org/3";
 
   return {
     getPopularMovies: async () => {
-      const data = await fetch(`${url}/popular/${api}`);
-      const results = await data.json().results;
+      const data = await fetch(`${url}/movie/popular/${api}`);
+      const results = (await data.json()).results;
       const arr = results.map(parseToMovie);
       return arr;
     },
@@ -21,7 +21,7 @@ const apiService = (apiKey) => {
      * @returns
      */
     getMovie: async (movieId) => {
-      const data = await fetch(`${url}/${movieId}/${api}`);
+      const data = await fetch(`${url}/movie/${movieId}/${api}`);
       const movie = await data.json();
       return parseToMovie(movie);
     },
@@ -33,8 +33,8 @@ const apiService = (apiKey) => {
      */
     searchMovie: async (query) => {
       query = `&query=${query}`;
-      const data = await fetch(`${url}/${api}/${query}`);
-      const results = await data.json().results;
+      const data = await fetch(`${url}/search/movie${api}${query}`);
+      const results = (await data.json()).results;
       const arr = results.map(parseToMovie);
       return arr;
     },
