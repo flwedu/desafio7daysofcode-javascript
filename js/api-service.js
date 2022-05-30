@@ -25,6 +25,19 @@ const apiService = (apiKey) => {
       const movie = await data.json();
       return parseToMovie(movie);
     },
+
+    /**
+     * This function sends a text query to the API and returns a movie list
+     * @param {string} query
+     * @returns
+     */
+    searchMovie: async (query) => {
+      query = `&query=${query}`;
+      const data = await fetch(`${url}/${api}/${query}`);
+      const results = await data.json().results;
+      const arr = results.map(parseToMovie);
+      return arr;
+    },
   };
 };
 
