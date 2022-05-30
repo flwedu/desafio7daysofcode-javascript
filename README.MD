@@ -3,13 +3,14 @@
 Projeto de um catálogo de filmes criado durante o desafio #7DaysOfCodeJavascript da Alura.
 
 Calendário do projeto:
-[x] Dia 1
-[x] Dia 2
-[x] Dia 3
-[x] Dia 4
-[ ] Dia 5
-[ ] Dia 6
-[ ] Dia 7
+
+- [x] Dia 1
+- [x] Dia 2
+- [x] Dia 3
+- [x] Dia 4
+- [ ] Dia 5
+- [ ] Dia 6
+- [ ] Dia 7
 
 ## Uso da aplicação
 
