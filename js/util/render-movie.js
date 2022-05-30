@@ -18,14 +18,14 @@ const renderMovie = (htmlEl, movie) => {
 </div>
 <div class="info">
     <h2>${movie.title} (${movie.year})</h2>
-    <span><img
-        id="rating"
+    <span id="rating"><img
+        id="rating-img"
         src="./static/star.svg"
         alt="Estrela representando o rating do filme"
     />${movie.rating}</span>
-    <span><img
-        id="heart"
-        src="./static/heart-off.svg"
+    <span id="heart"><img
+        id="heart-img"
+        src=${getImgSrcForHeart(movie.isFavorited)}
         alt="Coração representando se o filme está nos favoritos"
     />Favoritar</span>
 </div>
@@ -35,7 +35,21 @@ const renderMovie = (htmlEl, movie) => {
     </p>
 </div>
 `;
+  // click on the heart (favorite/unfavorite) button)
+  const heart = card.querySelector("#heart");
+  heart.addEventListener("click", (event) => {
+    movie.isFavorited = !movie.isFavorited;
+    heart.querySelector("img").src = getImgSrcForHeart(movie.isFavorited);
+  });
   htmlEl.appendChild(card);
 };
+
+/**
+ * This function returns the img src to heart element based on the movie.isFavorited attribute
+ * @param {boolean} status
+ */
+function getImgSrcForHeart(status) {
+  return status ? "./static/heart-on.svg" : "./static/heart-off.svg";
+}
 
 export default renderMovie;
