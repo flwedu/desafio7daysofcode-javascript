@@ -10,8 +10,8 @@ const apiService = (apiKey) => {
   return {
     getPopularMovies: async () => {
       const data = await fetch(`${url}/popular/${api}`);
-      const results = await data.json();
-      const arr = results.results.map(parseToMovie);
+      const results = await data.json().results;
+      const arr = results.map(parseToMovie);
       return arr;
     },
 
