@@ -1,10 +1,10 @@
 import Movie from "./model/Movie.js";
 import parseToMovie from "./util/parse-to-movie.js";
-/**
- * This function create a service to request data to MovieDB API.
- * @param {string} apiKey
- */
 class ApiService {
+  /**
+   * This function create a service to request data to MovieDB API.
+   * @param {string} apiKey
+   */
   constructor(apiKey) {
     this.api = `?api_key=${apiKey}`;
     this.url = "https://api.themoviedb.org/3";
