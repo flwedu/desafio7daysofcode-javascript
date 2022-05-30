@@ -9,3 +9,12 @@ const service = apiService(config.API_KEY);
 service.getPopularMovies().then((results) => {
   results.forEach(renderMovieInList);
 });
+
+// Form actions
+const form = document.getElementById("form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  service.searchMovie(form["query"].value).then((results) => {
+    results.forEach(renderMovieInList);
+  });
+});
