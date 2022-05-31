@@ -1,11 +1,13 @@
 import Movie from "../model/Movie.js";
+import StorageService from "../storage-service.js";
 /**
  * This function append a child with generated HTML with the movie in content.
  * @param {HTMLElement} htmlEl
+ * @param {StorageService} storage
  * @param {Movie} movie
  * @returns
  */
-const renderMovie = (htmlEl, movie) => {
+const renderMovie = (htmlEl, storage, movie) => {
   const card = document.createElement("div");
   card.className = "card shadow rounded grid";
   card.innerHTML = `
@@ -39,6 +41,7 @@ const renderMovie = (htmlEl, movie) => {
   const heart = card.querySelector("#heart");
   heart.addEventListener("click", (event) => {
     movie.isFavorited = !movie.isFavorited;
+    storage.saveOrRemoveId(movie.id, movie.isFavorited);
     heart.querySelector("img").src = getImgSrcForHeart(movie.isFavorited);
   });
   htmlEl.appendChild(card);
