@@ -6,7 +6,7 @@ class StorageService {
   constructor(dbName) {
     this.dbName = dbName;
     if (!localStorage.getItem(dbName)) {
-      localStorage.setItem(dbName, "[]");
+      localStorage.setItem(dbName, '[]');
     }
   }
 

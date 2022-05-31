@@ -1,6 +1,6 @@
-import Movie from "./model/Movie.js";
-import StorageService from "./storage-service.js";
-import renderMovie from "./util/render-movie.js";
+import Movie from './model/Movie.js';
+import StorageService from './storage-service.js';
+import renderMovie from './util/render-movie.js';
 
 class ListUpdater {
   /**
@@ -27,9 +27,9 @@ class ListUpdater {
    * Update the innerHTML of list element
    */
   refresh() {
-    this.el.innerHTML = "";
+    this.el.innerHTML = '';
     this.movies.forEach((movie) => {
-      //Check if movie is favorite
+      // Check if movie is favorite
       movie.isFavorited = this.storage.getFavoriteStatus(movie.id);
       renderMovie(this.el, this.storage, movie);
     });

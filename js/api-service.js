@@ -1,5 +1,6 @@
-import Movie from "./model/Movie.js";
-import parseToMovie from "./util/parse-to-movie.js";
+import Movie from './model/Movie.js';
+import parseToMovie from './util/parse-to-movie.js';
+
 class ApiService {
   /**
    * This function create a service to request data to MovieDB API.
@@ -7,7 +8,7 @@ class ApiService {
    */
   constructor(apiKey) {
     this.api = `?api_key=${apiKey}`;
-    this.url = "https://api.themoviedb.org/3";
+    this.url = 'https://api.themoviedb.org/3';
   }
 
   /**
@@ -16,7 +17,7 @@ class ApiService {
    */
   async getPopularMovies() {
     const data = await fetch(`${this.url}/movie/popular/${this.api}`);
-    const results = (await data.json()).results;
+    const { results } = await data.json();
     const arr = results.map(parseToMovie);
     return arr;
   }
@@ -38,9 +39,9 @@ class ApiService {
    * @returns {Movie[]} list of movies
    */
   async searchMovie(query) {
-    query = `&query=${query}`;
-    const data = await fetch(`${this.url}/search/movie${this.api}${query}`);
-    const results = (await data.json()).results;
+    const $query = `&query=${query}`;
+    const data = await fetch(`${this.url}/search/movie${this.api}${$query}`);
+    const { results } = await data.json();
     const arr = results.map(parseToMovie);
     return arr;
   }

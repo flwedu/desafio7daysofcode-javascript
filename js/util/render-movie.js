@@ -1,5 +1,14 @@
-import Movie from "../model/Movie.js";
-import StorageService from "../storage-service.js";
+import Movie from '../model/Movie.js';
+import StorageService from '../storage-service.js';
+
+/**
+ * This function returns the img src to heart element based on the movie.isFavorited attribute
+ * @param {boolean} status
+ */
+function getImgSrcForHeart(status) {
+  return status ? './static/heart-on.svg' : './static/heart-off.svg';
+}
+
 /**
  * This function append a child with generated HTML with the movie in content.
  * @param {HTMLElement} htmlEl
@@ -8,8 +17,8 @@ import StorageService from "../storage-service.js";
  * @returns
  */
 const renderMovie = (htmlEl, storage, movie) => {
-  const card = document.createElement("div");
-  card.className = "card shadow rounded grid";
+  const card = document.createElement('div');
+  card.className = 'card shadow rounded grid';
   card.innerHTML = `
 <div class="left align-center">
     <img
@@ -40,21 +49,13 @@ const renderMovie = (htmlEl, storage, movie) => {
 </div>
 `;
   // click on the heart (favorite/unfavorite) button)
-  const heart = card.querySelector("#heart");
-  heart.addEventListener("click", (event) => {
+  const heart = card.querySelector('#heart');
+  heart.addEventListener('click', () => {
     movie.isFavorited = !movie.isFavorited;
     storage.saveOrRemoveId(movie.id, movie.isFavorited);
-    heart.querySelector("img").src = getImgSrcForHeart(movie.isFavorited);
+    heart.querySelector('img').src = getImgSrcForHeart(movie.isFavorited);
   });
   htmlEl.appendChild(card);
 };
-
-/**
- * This function returns the img src to heart element based on the movie.isFavorited attribute
- * @param {boolean} status
- */
-function getImgSrcForHeart(status) {
-  return status ? "./static/heart-on.svg" : "./static/heart-off.svg";
-}
 
 export default renderMovie;
