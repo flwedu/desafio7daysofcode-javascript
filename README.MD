@@ -36,4 +36,5 @@ npm run start
 
 ## Screenshot da aplicação
 
-![image](https://user-images.githubusercontent.com/55285816/171071725-4223366c-1f6c-4241-b5a4-b828710f0b84.png)
+![image](https://user-images.githubusercontent.com/55285816/171176282-f95dfac7-8145-4028-9be1-8e344f0b3a4d.png)
+
