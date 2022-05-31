@@ -6,11 +6,11 @@ A aplicação consome a [The Movie Database API](https://developers.themoviedb.o
 
 Calendário do projeto:
 
-- [x] Dia 1
-- [x] Dia 2
-- [x] Dia 3
-- [x] Dia 4
-- [ ] Dia 5
+- [x] Dia 1 - Criando os filmes de forma estática
+- [x] Dia 2 - Manipulação do DOM e criando os elementos de forma dinâmica
+- [x] Dia 3 - Consumindo a API
+- [x] Dia 4 - Buscando um filme através da barra de pesquisa
+- [x] Dia 5 - Favoritando/desfavoritando um filme e salvando no Local Storage
 - [ ] Dia 6
 - [ ] Dia 7
 
@@ -37,4 +37,3 @@ npm run start
 ## Screenshot da aplicação
 
 ![image](https://user-images.githubusercontent.com/55285816/171071725-4223366c-1f6c-4241-b5a4-b828710f0b84.png)
-
