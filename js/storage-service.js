@@ -28,6 +28,7 @@ class StorageService {
   saveOrRemoveId(id, save) {
     let favIds = JSON.parse(localStorage.getItem(this.dbName));
     if (save) {
+      if (favIds.indexOf(id) > -1) return;
       favIds.push(id);
     } else {
       favIds = favIds.filter((el) => el !== id);
