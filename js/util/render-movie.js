@@ -11,25 +11,27 @@ const renderMovie = (htmlEl, storage, movie) => {
   const card = document.createElement("div");
   card.className = "card shadow rounded grid";
   card.innerHTML = `
-<div class="left">
+<div class="left align-center">
     <img
     class="full-rounded"
     src=${movie.image}
     alt="Imagem do poster do filme"
     />
 </div>
-<div class="info">
+<div class="info flex flex-col text-center">
     <h2>${movie.title} (${movie.year})</h2>
-    <span id="rating"><img
+    <div class="flex flex-row info-buttons">
+    <span class="flex flex-row" id="rating"><img
         id="rating-img"
         src="./static/star.svg"
         alt="Estrela representando o rating do filme"
     />${movie.rating}</span>
-    <span id="heart"><img
+    <span class="flex flex-row" id="heart"><img
         id="heart-img"
         src=${getImgSrcForHeart(movie.isFavorited)}
         alt="Coração representando se o filme está nos favoritos"
     />Favoritar</span>
+    </div>
 </div>
 <div class="description">
     <p>

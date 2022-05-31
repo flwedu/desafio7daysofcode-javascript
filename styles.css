@@ -57,6 +57,7 @@ span {
   font-weight: 400;
   word-spacing: 3px;
   text-align: center;
+  gap: 0.5rem;
 }
 
 form input[type="text"] {
@@ -88,16 +89,15 @@ form button img {
   object-fit: cover;
 }
 
-/* Class Elements */
-.left {
-  align-items: center;
-}
+/* Custom class styles */
 
-.info {
+.text-center {
   text-align: center;
 }
 
-/* Custom class styles */
+.align-center {
+  align-items: center;
+}
 
 .shadow {
   box-shadow: 3px 2px 2.5px var(--color-dark);
