@@ -1,6 +1,8 @@
 # Desafio 7 Days Of Code Alura - Javascript
 
-Projeto de um catálogo de filmes criado durante o desafio #7DaysOfCodeJavascript da Alura.
+Projeto de um catálogo de filmes criado durante o desafio #7DaysOfCodeJavascript da Alura, utilizando Javascript Vanilla, HTML e CSS.
+
+A aplicação consome a [The Movie Database API](https://developers.themoviedb.org/3/getting-started/introduction).
 
 Calendário do projeto:
 
@@ -31,3 +33,8 @@ export default config;
 ```bash
 npm run start
 ```
+
+## Screenshot da aplicação
+
+![image](https://user-images.githubusercontent.com/55285816/171071725-4223366c-1f6c-4241-b5a4-b828710f0b84.png)
+
