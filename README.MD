@@ -11,7 +11,7 @@ Calendário do projeto:
 - [x] Dia 3 - Consumindo a API
 - [x] Dia 4 - Buscando um filme através da barra de pesquisa
 - [x] Dia 5 - Favoritando/desfavoritando um filme e salvando no Local Storage
-- [ ] Dia 6
+- [x] Dia 6 - Mostrando apenas os filmes favoritos
 - [ ] Dia 7
 
 ## Uso da aplicação
