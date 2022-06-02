@@ -3,34 +3,41 @@ import ApiService from './api-service.js';
 import ListUpdater from './list-updater.js';
 import StorageService from './storage-service.js';
 
-const service = new ApiService(config.API_KEY);
-const storage = new StorageService('favorites_movies_db');
+const favoritesCheckboxHtmlEl = document.getElementById('favorites');
+const listHtmlElement = document.getElementById('list');
+const form = document.getElementById('form');
 
-const favoritesCheckbox = document.getElementById('favorites');
-const listEl = document.getElementById('list');
-const listUpdater = new ListUpdater(listEl, storage);
+const storageService = new StorageService('favorites_movies_db');
+const apiService = new ApiService(config.API_KEY);
+const listUpdater = new ListUpdater(listHtmlElement, storageService);
+
 let popularMovies = [];
 let searchedMovies = [];
 
-service.getPopularMovies().then((results) => {
+function updateViewAndMoviesListWithResults(results) {
   popularMovies = results;
   searchedMovies = results;
   listUpdater.setMovies(popularMovies);
-});
+}
 
-// Show only favorites movies
-favoritesCheckbox.addEventListener('change', () => {
-  if (favoritesCheckbox.checked)
+apiService.getPopularMovies().then(updateViewAndMoviesListWithResults);
+
+function toggleShowOnlyFavoritesMovies() {
+  if (favoritesCheckboxHtmlEl.checked)
     return listUpdater.setMovies(
       searchedMovies.filter((movie) => movie.isFavorited === true)
     );
   return listUpdater.setMovies(searchedMovies);
-});
+}
+
+favoritesCheckboxHtmlEl.addEventListener(
+  'change',
+  toggleShowOnlyFavoritesMovies
+);
 
 // Search form
-const form = document.getElementById('form');
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
+function searchInApi($event) {
+  $event.preventDefault();
   const query = form.query.value;
   if (query) {
     return service.searchMovie(form.query.value).then((results) => {
@@ -40,4 +47,6 @@ form.addEventListener('submit', (e) => {
   }
   searchedMovies = popularMovies;
   return listUpdater.setMovies(searchedMovies);
-});
+}
+
+form.addEventListener('submit', searchInApi);

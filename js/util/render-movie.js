@@ -11,12 +11,12 @@ function getImgSrcForHeart(status) {
 
 /**
  * This function append a child with generated HTML with the movie in content.
- * @param {HTMLElement} htmlEl
- * @param {StorageService} storage
+ * @param {HTMLElement} htmlElReference
+ * @param {StorageService} storageService
  * @param {Movie} movie
  * @returns
  */
-const renderMovie = (htmlEl, storage, movie) => {
+const renderMovie = (htmlElReference, storageService, movie) => {
   const card = document.createElement('div');
   card.className = 'card shadow rounded grid';
   card.innerHTML = `
@@ -52,10 +52,10 @@ const renderMovie = (htmlEl, storage, movie) => {
   const heart = card.querySelector('#heart');
   heart.addEventListener('click', () => {
     movie.isFavorited = !movie.isFavorited;
-    storage.saveOrRemoveId(movie.id, movie.isFavorited);
+    storageService.saveOrRemoveId(movie.id, movie.isFavorited);
     heart.querySelector('img').src = getImgSrcForHeart(movie.isFavorited);
   });
-  htmlEl.appendChild(card);
+  htmlElReference.appendChild(card);
 };
 
 export default renderMovie;
